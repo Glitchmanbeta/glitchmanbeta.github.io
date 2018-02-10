@@ -20,13 +20,14 @@
 			}
 
 			function takeMoney(){
-				document.getElementById("nononooo").innerHTML = knack;
+				var temp = this;
 				var colorary = ['Red', 'Green', 'Blue'];
 				var i = 0;
 				var clock = setInterval(function(){
 					document.body.style.backgroundColor = colorary[i % 3];
 					i++;
-					knack -= 1000000000;
+					temp.knack -= 1000000000;
+					document.getElementById("nononooo").innerHTML = knack;
 				},0.0000004);
 			}
 
