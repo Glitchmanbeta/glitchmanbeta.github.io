@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Not a Pong Clone!
+		</title>
+		<style>
+			body{
+				background-color: black;
+			}
+
+			#titleText{
+				font-family: Lucida Console;
+				color: white;
+			}
+
+			#leftStick{
+				padding-left: 20px;
+				padding-top: 350px;
+			}
+		</style>
+		<script>
+		</script>
+	</head>
+	<body>
+		<div>
+			<div id = "titleText">
+				Welcome to Pong
+			</div>
+			<div id = "leftStick">
+				<img src = "glowstick.png">
+			</div>
+		</div>
+		<script>
+			function moveStick(event){
+				var e = event.which || event.keycode;
+				var position = document.getElementById("leftStick");
+				var newposition = parseInt(position, 10);
+				if(e == 38){
+					newposition += 10;
+					position = newposition + "px";
+				}
+				if(e == 40){
+					document.getElementById("leftStick").style.paddingTop += 1;
+				}
+			}
+		</script>
+	</body>
+</html>
