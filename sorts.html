@@ -7,6 +7,17 @@
 		<script>
 			var ary = [6, 5, 3, 1, 8, 7, 2, 4];
 
+			function print(){
+				var output = document.getElementById("console");
+				output.innerHTML += "[";
+				for(var i = 0; i < ary.length; i++){
+					if(i == ary.length - 1){
+						output.innerHTML += (ary[i] + "]");
+					}
+					output.innerHTML += (ary[i] + ", ");
+				}
+			}
+
 			function shuffle(a) {
 				var j, x, i;
 				for (i = a.length - 1; i > 0; i--) {
@@ -23,24 +34,29 @@
 					return ary;
 				}
 				while(!sorted){
-					for(var i = 0; ary[i] <= ary[i + 1]; i++){
+					for(var i = 0; i < ary.length - 1 && ary[i] <= ary[i + 1]; i++){
 						if(i == ary.length - 2 && ary[i] == ary[i + 1]){
 							return ary;
 						}
 						shuffle(ary);
 					}
 				}
+				print();
 			}
 
-			function print(){
-				var output = document.getElementById("console");
-				output.innerHTML += "[";
-				for(var i = 0; i < ary.length; i++){
-					if(i == ary.length - 1){
-
+			function bubbleSort(){
+				print();
+				for(var i = ary.length; i >= 0; i--){
+					for(var j = 0; j < ary.length - 2; j++){
+						if(ary[j] > ary[j + 1]){
+							var temp = ary[j];
+							ary[j] = ary[j + 1];
+							ary[j + 1] = temp;
+						}
 					}
-					output.innerHTML += 
 				}
+				print();
+				return ary;
 			}
 
 		</script>
@@ -51,5 +67,10 @@
 				Have you ever wanted to compare the runtimes of different sorting algorithms? No? Well too bad, because when I was a bored college freshman, that's exactly what I did! Yes, I'm a sad individual...
 			</div>
 			<div>
-				<input type = "button" value = "Bogo Sort" onclick = "bogoSort()"/>
+				<input type = "button" value = "Bogo Sort" onClick = "bogoSort()"/>
+			</div>
+			<div>
+				<input type = "button" value = "Bubble Sort" onClick = "bubbleSort()"/>
 		</div>
+	</body>
+</html>
