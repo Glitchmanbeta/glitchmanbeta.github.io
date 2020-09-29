@@ -1,0 +1,23 @@
+
+body {
+    background-color: black;
+}
+
+h1 {
+    color: white;
+    font-family: Helvetica, sans-serif;
+    font-size: 72px;
+}
+
+p {
+    color: white;
+    font-family: Helvetica, sans-serif;
+}
+
+hr {
+    color: white;
+}
+
+a {
+    font-family: Helvetica, sans-serif;
+}
